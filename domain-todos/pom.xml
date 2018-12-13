@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.jarredweb.works</groupId>
+		<groupId>com.practicaldime.works</groupId>
 		<artifactId>common-jars</artifactId>
 		<version>0.1</version>
 	</parent>
@@ -22,7 +22,7 @@
 	<dependencies>
 		<!-- domain model - users -->
 		<dependency>
-			<groupId>com.jarredweb.works</groupId>
+			<groupId>com.practicaldime.works</groupId>
 			<artifactId>domain-users</artifactId>
 			<version>${project.version}</version>
 		</dependency>

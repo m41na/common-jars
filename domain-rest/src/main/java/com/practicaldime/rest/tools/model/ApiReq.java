@@ -1,4 +1,4 @@
-package works.hop.rest.tools.model;
+package com.practicaldime.rest.tools.model;
 
 import java.io.Serializable;
 import java.util.HashMap;

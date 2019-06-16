@@ -11,7 +11,7 @@
 		<version>0.1</version>
 	</parent>
 
-	<artifactId>domain-backlog</artifactId>
+	<artifactId>domain-todos</artifactId>
 	<name>domain-todos</name>
 	<url>http://maven.apache.org</url>
 

@@ -1,5 +1,8 @@
 package com.practicaldime.common.util;
 
+import java.util.Collections;
+import java.util.List;
+
 public class AppResult<T> {
 
     private ResStatus status;
@@ -21,7 +24,7 @@ public class AppResult<T> {
     }
 
     public AppResult(int code, String message) {
-        this(new ResStatus(code, message, null));
+        this(new ResStatus(code, message));
     }
 
     public AppResult(int code, String message, String reason) {
@@ -48,23 +51,11 @@ public class AppResult<T> {
         return status != null ? status.getCode() : 0;
     }
 
-    public void setCode(int code) {
-        status.setCode(code);
-    }
-
-    public String getError() {
-        return status != null ? status.getError() : null;
-    }
-
-    public void setError(String error) {
-        getStatus().setError(error);
+    public List<String> getErrors() {
+        return status != null ? status.getErrors() : Collections.emptyList();
     }
 
     public String getMessage() {
         return status != null ? status.getMessage() : null;
-    }
-
-    public void setMessage(String message) {
-        getStatus().setMessage(message);
     }
 }

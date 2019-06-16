@@ -9,5 +9,7 @@ target
 *.jar
 *.log
 *.war
+**/*.iml
+**/\.idea
 data
 

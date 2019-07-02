@@ -1,25 +1,24 @@
 package com.practicaldime.common.util;
 
+import java.util.Map;
+
 public class AppException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
-    private ResStatus errorDetails;
 
-    public AppException(ResStatus appError) {
-        super(appError.getMessage());
-        this.errorDetails = appError;
+    public AppException(int status, String error) {
+        super(String.format("error status - %d : %s", status, error));
     }
 
-    public AppException(ResStatus appError, Throwable cause) {
-        super(appError.getMessage(), cause);
-        this.errorDetails = appError;
+    public AppException(int status, String error, Throwable cause) {
+        super(String.format("error status - %d : %s", status, error, cause));
     }
 
-    public ResStatus getErrorDetails() {
-        return errorDetails;
+    public AppException(int status, Map<String, String> errors) {
+        super(errors.keySet().stream().reduce(String.format("error status - %d : ", status), (acc, key) -> acc + errors.get(key) + "\n"));
     }
 
-    public void setErrorDetails(ResStatus errorDetails) {
-        this.errorDetails = errorDetails;
+    public AppException(int status, Map<String, String> errors, Throwable cause) {
+        super(errors.keySet().stream().reduce(String.format("error status - %d : ", status), (acc, key) -> acc + errors.get(key) + "\n"), cause);
     }
 }

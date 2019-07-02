@@ -1,0 +1,49 @@
+{"namespace": "com.practicaldime.common.avro",
+ "type": "record",
+ "name": "AccountAvro",
+ "fields": [
+     {"name": "id", "type": ["null", "string"]},
+     {"name": "username", "type": "string"},
+     {"name": "password",  "type": "string"},
+     {"name": "role", "type": ["null", {"type": "enum", "name": "AccRoleAvro", "symbols": ["admin", "super_user", "user", "guest"]}]
+     },
+     {"name": "status", "type": ["null", {"type": "enum", "name": "AccStatusAvro", "symbols": ["active", "pending", "inactive", "hidden"]}]
+     },
+     {"name": "datetime", "type": "string"},
+     {"name": "profile", "type": [
+        "null", {
+            "type": "record",
+             "name": "ProfileAvro",
+             "fields": [
+                 {"name": "id", "type": ["string", "null"]},
+                 {"name": "firstName", "type": ["string", "null"]},
+                 {"name": "lastName",  "type": ["string", "null"]},
+                 {"name": "emailAddress", "type": "string"},
+                 {"name": "emailVerified", "type": "boolean", "default": false},
+                 {"name": "phoneNumber", "type": ["string", "null"]},
+                 {"name": "phoneVerified", "type": "boolean", "default": false},
+                 {"name": "address", "type": [
+                    "null", {
+                        "type": "record",
+                        "name": "LocationAvro",
+                        "fields": [
+                            {"name": "id", "type": ["string", "null"]},
+                            {"name": "city",  "type": "string"},
+                            {"name": "county", "type": ["string", "null"]},
+                            {"name": "state", "type": "string"},
+                            {"name": "zip", "type": ["string", "null"]},
+                            {"name": "country", "type": ["string", "null"]},
+                            {"name": "updatedBy", "type": ["string", "null"]},
+                            {"name": "createdTs", "type": ["string", "null"]}
+                        ]}
+                     ]
+                  },
+                  {"name": "updatedBy", "type": ["string", "null"]},
+                  {"name": "createdTs", "type": ["string", "null"]}
+             ]}
+          ]
+        },
+        {"name": "updatedBy", "type": ["string", "null"]},
+        {"name": "createdTs", "type": ["string", "null"]}
+     ]
+}

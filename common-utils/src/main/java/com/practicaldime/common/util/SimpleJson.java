@@ -1,9 +1,9 @@
 package com.practicaldime.common.util;
 
-import java.util.Map;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.util.Map;
 
 public class SimpleJson {
 
@@ -20,7 +20,7 @@ public class SimpleJson {
                 return mapper.writeValueAsString(value);
             }
         } catch (Exception cause) {
-            throw new AppException(new ResStatus(1, cause.getMessage()));
+            throw new AppException(1, cause.getMessage());
         }
     }
 
@@ -29,7 +29,7 @@ public class SimpleJson {
             ObjectMapper mapper = provideObjectMapper();
             return mapper.readValue(json, type);
         } catch (Exception cause) {
-            throw new AppException(new ResStatus(1, cause.getMessage()));
+            throw new AppException(1, cause.getMessage());
         }
     }
 
@@ -38,7 +38,7 @@ public class SimpleJson {
             ObjectMapper mapper = provideObjectMapper();
             return mapper.readValue(json, type);
         } catch (Exception cause) {
-            throw new AppException(new ResStatus(1, cause.getMessage()));
+            throw new AppException(1, cause.getMessage());
         }
     }
 
@@ -47,7 +47,7 @@ public class SimpleJson {
             ObjectMapper mapper = provideObjectMapper();
             return mapper.convertValue(map, type);
         } catch (Exception cause) {
-            throw new AppException(new ResStatus(1, cause.getMessage()));
+            throw new AppException(1, cause.getMessage());
         }
     }
 
@@ -56,7 +56,7 @@ public class SimpleJson {
             ObjectMapper mapper = provideObjectMapper();
             return mapper.convertValue(map, type);
         } catch (Exception cause) {
-            throw new AppException(new ResStatus(1, cause.getMessage()));
+            throw new AppException(1, cause.getMessage());
         }
     }
 

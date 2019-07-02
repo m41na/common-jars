@@ -1,0 +1,14 @@
+{"namespace": "com.practicaldime.common.avro",
+ "type": "record",
+ "name": "FlashCardAvro",
+ "fields": [
+     {"name": "refId", "type": "string"},
+     {"name": "teamId", "type": "string"},
+     {"name": "profileId", "type": "string"},
+     {"name": "team", "type": "string"},
+     {"name": "player",  "type": "string"},
+     {"name": "topic", "type": "string"},
+     {"name": "pick", "type": "string"},
+     {"name": "submitTime", "type": "string"}
+ ]
+}

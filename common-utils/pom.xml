@@ -18,14 +18,38 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<slf4j.version>1.7.5</slf4j.version>
+		<spring.version>4.3.16.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
+		<!-- Spring context -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- Logging API -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- validation -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.17.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.el</artifactId>
+			<version>3.0.1-b11</version>
 			<scope>provided</scope>
 		</dependency>
 		

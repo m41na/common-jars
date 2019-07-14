@@ -125,7 +125,11 @@ public class ApiReq implements Serializable {
     }
 
     public void addHeader(String header, String value) {
-        headers.put(header, value);
+        headers.put(header.toLowerCase(), value);
+    }
+
+    public boolean hasHeaderValue(String header, String value){
+        return headers != null && headers.get(header.toLowerCase()) != null && headers.get(header.toLowerCase()).equalsIgnoreCase(value);
     }
 
     public String getEntity() {

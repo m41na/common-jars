@@ -8,7 +8,7 @@ public class AppUser implements Serializable, Comparable<AppUser> {
     private static final long serialVersionUID = 1L;
 
     public char[] username;
-    public String userId;
+    public Long userId;
     public String userRole;
     public char[] userToken;
     public Boolean ghosting;
@@ -16,7 +16,7 @@ public class AppUser implements Serializable, Comparable<AppUser> {
     public Long expiryTime;
     public char[] fullName;
 
-    public AppUser(String username, String userId) {
+    public AppUser(String username, Long userId) {
         if (username != null && userId != null) {
             this.username = username.toCharArray();
             this.ghosting = Boolean.FALSE;
@@ -26,7 +26,7 @@ public class AppUser implements Serializable, Comparable<AppUser> {
         }
     }
 
-    public AppUser(String username, String userId, String fullName) {
+    public AppUser(String username, Long userId, String fullName) {
         this(username, userId);
         this.fullName = fullName.toCharArray();
     }

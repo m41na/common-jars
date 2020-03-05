@@ -23,7 +23,7 @@
           ]
        },
      {"name": "createdBy", "type": ["long", "null"]},
-     {"name": "dateCreated", "type": "string"},
+     {"name": "createdTs", "type": "string"},
      {"name": "picks", "type": ["null",
         {"type": "array", "items": "string"}
      ]}

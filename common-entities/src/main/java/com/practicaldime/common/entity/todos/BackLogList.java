@@ -11,7 +11,7 @@ public class BackLogList {
     private String title;
     private Account owner;
     private List<BackLogItem> items;
-    private Date dateCreaated = new Date();
+    private Date createdTs = new Date();
 
     public Long getId() {
         return id;
@@ -21,12 +21,12 @@ public class BackLogList {
         this.id = id;
     }
 
-    public Date getDateCreaated() {
-        return dateCreaated;
+    public Date getCreatedTs() {
+        return createdTs;
     }
 
-    public void setDateCreaated(Date dateCreaated) {
-        this.dateCreaated = dateCreaated;
+    public void setCreatedTs(Date createdTs) {
+        this.createdTs = createdTs;
     }
 
     public String getTitle() {

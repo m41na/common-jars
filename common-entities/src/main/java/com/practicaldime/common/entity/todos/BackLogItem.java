@@ -8,7 +8,7 @@ public class BackLogItem {
     private Long id;
     private String task;
     private boolean done;
-    private Date dateCreaated = new Date();
+    private Date createdTs = new Date();
 
     public BackLogItem() {
         super();
@@ -27,12 +27,12 @@ public class BackLogItem {
         this.id = id;
     }
 
-    public Date getDateCreaated() {
-        return dateCreaated;
+    public Date getCreatedTs() {
+        return createdTs;
     }
 
-    public void setDateCreaated(Date dateCreaated) {
-        this.dateCreaated = dateCreaated;
+    public void setCreatedTs(Date createdTs) {
+        this.createdTs = createdTs;
     }
 
     public String getTask() {

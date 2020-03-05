@@ -18,7 +18,7 @@ public class BlogPost {
     private String content;
     private int pageNum;
     private boolean published;
-    private Date dateCreated = new Date();
+    private Date createdTs = new Date();
 
     public Long getId() {
         return id;
@@ -28,12 +28,12 @@ public class BlogPost {
         this.id = id;
     }
 
-    public Date getDateCreated() {
-        return dateCreated;
+    public Date getCreatedTs() {
+        return createdTs;
     }
 
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
+    public void setCreatedTs(Date createdTs) {
+        this.createdTs = createdTs;
     }
 
     public String getTitle() {

@@ -143,7 +143,7 @@ public class AvroEntity {
                 .setLocked(team.getLocked())
                 .setPicks(Arrays.asList(team.getPicks()))
                 .setCreatedBy(team.getCreatedBy())
-                .setDateCreated(dateToStr((team.getCreatedTs())))
+                .setCreatedTs(dateToStr((team.getCreatedTs())))
                 .setAddress(convert(team.getLocatedAt())).build();
     }
 
@@ -155,7 +155,7 @@ public class AvroEntity {
                 team.getLocked(),
                 convert(team.getAddress()),
                 team.getCreatedBy(),
-                strToDate(team.getDateCreated().toString()),
+                strToDate(team.getCreatedTs().toString()),
                 team.getPicks().toArray(new String[team.getPicks().size()])
         );
     }

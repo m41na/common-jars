@@ -15,7 +15,7 @@ public class Comment {
     private Profile author;
     private String content;
     private boolean published;
-    private Date dateCreated = new Date();
+    private Date createdTs = new Date();
 
     public Long getId() {
         return id;
@@ -25,12 +25,12 @@ public class Comment {
         this.id = id;
     }
 
-    public Date getDateCreated() {
-        return dateCreated;
+    public Date getCreatedTs() {
+        return createdTs;
     }
 
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
+    public void setCreatedTs(Date createdTs) {
+        this.createdTs = createdTs;
     }
 
     public long getParentBlog() {

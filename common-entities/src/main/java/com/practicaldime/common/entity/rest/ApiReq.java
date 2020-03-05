@@ -24,7 +24,7 @@ public class ApiReq implements Serializable {
     private String entity;
     private String[] authorized = {}; //new
     private ApiRes response = new ApiRes();
-    private List<ApiAssert>  assertions = new LinkedList<>();
+    private List<ApiAssert> assertions = new LinkedList<>();
     private Boolean execute;
     private Map<String, String> envs = new HashMap<>();
 
@@ -128,7 +128,7 @@ public class ApiReq implements Serializable {
         headers.put(header.toLowerCase(), value);
     }
 
-    public boolean hasHeaderValue(String header, String value){
+    public boolean hasHeaderValue(String header, String value) {
         return headers != null && headers.get(header.toLowerCase()) != null && headers.get(header.toLowerCase()).equalsIgnoreCase(value);
     }
 
@@ -180,7 +180,7 @@ public class ApiReq implements Serializable {
             throw new RuntimeException(String.format("Looks like these two endpoints \r\n %s \r\n AND \r\n %s \r\n do not quite match", this, target));
         }
         //copy without remorse
-        if(pathParams != null){
+        if (pathParams != null) {
             target.setPathParams(pathParams);
         }
         if (queryParams != null) {

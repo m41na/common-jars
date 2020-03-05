@@ -3,13 +3,13 @@ package com.practicaldime.common.entity.users;
 import java.util.Date;
 
 public class LoginStatus {
-    
-    private Long accountId; 
+
+    private Long accountId;
     private String loginToken;
     private int loginAttempts;
     private String statusInfo;
     private Date lockExpiry;
-    private Date loginSuccess; 
+    private Date loginSuccess;
     private Date statusCreated;
 
     public Long getAccountId() {

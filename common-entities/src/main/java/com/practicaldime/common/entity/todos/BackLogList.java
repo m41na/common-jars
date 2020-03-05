@@ -5,7 +5,7 @@ import com.practicaldime.common.entity.users.Account;
 import java.util.Date;
 import java.util.List;
 
-public class BackLogList  {
+public class BackLogList {
 
     private Long id;
     private String title;

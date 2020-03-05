@@ -6,9 +6,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
-public class ScrumTeam implements Comparable<ScrumTeam>{
+public class ScrumTeam implements Comparable<ScrumTeam> {
 
-    private String id;
+    private Long id;
 
     @NotNull(message = "team title is a required field")
     @Size(max = 32, message = "max length of team title allowed is 32")
@@ -22,7 +22,7 @@ public class ScrumTeam implements Comparable<ScrumTeam>{
 
     private Location locatedAt;
 
-    private String createdBy;
+    private long createdBy;
 
     private Date createdTs;
 
@@ -32,7 +32,7 @@ public class ScrumTeam implements Comparable<ScrumTeam>{
         super();
     }
 
-    public ScrumTeam(String id, String title, String organizer, Boolean locked, Location locatedAt, String createdBy, Date createdTs, String[] picks) {
+    public ScrumTeam(Long id, String title, String organizer, Boolean locked, Location locatedAt, Long createdBy, Date createdTs, String[] picks) {
         this.id = id;
         this.title = title;
         this.organizer = organizer;
@@ -43,11 +43,11 @@ public class ScrumTeam implements Comparable<ScrumTeam>{
         this.picks = picks;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -83,11 +83,11 @@ public class ScrumTeam implements Comparable<ScrumTeam>{
         this.locatedAt = locatedAt;
     }
 
-    public String getCreatedBy() {
+    public Long getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
     }
 
@@ -113,8 +113,8 @@ public class ScrumTeam implements Comparable<ScrumTeam>{
             return 0;
         }
         int compare = this.getOrganizer().compareTo(o.getOrganizer());
-        if(compare != 0) {
-        	return compare;
+        if (compare != 0) {
+            return compare;
         }
         return this.getTitle().compareTo(o.getTitle());
     }

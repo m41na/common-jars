@@ -1,15 +1,15 @@
 package com.practicaldime.common.util;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Date;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class UserTokenGenTest {
-    
+
     private final UserTokenGen gen = UserTokenGen.getInstance();
 
     @Test
@@ -23,7 +23,7 @@ public class UserTokenGenTest {
         String token = "SOmeS3cr3tC0d3";
         String encrypted = gen.encrypt(token);
         System.out.format("Source '%s' encrypted is '%s'%n", token, encrypted);
-        
+
         String decrypted = gen.decrypt(encrypted)[0];
         assertEquals("Expected same value", token, decrypted);
     }
@@ -33,7 +33,7 @@ public class UserTokenGenTest {
         String token = "SOmeS3cr3tC0d3";
         String encrypted = gen.encrypt(token);
         System.out.format("Source '%s' encrypted is '%s'%n", token, encrypted);
-        
+
         String decrypted = gen.decrypt(encrypted)[1];
         System.out.println(new Date(Long.valueOf(decrypted)));
     }

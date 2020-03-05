@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Location implements Comparable<Location> {
 
-    private String id;
+    private Long id;
 
     @NotNull(message = "city is a required field")
     @Size(max = 32, message = "max length of city allowed is 32")
@@ -31,7 +31,7 @@ public class Location implements Comparable<Location> {
         super();
     }
 
-    public Location(String id, String city, String county, String state, String zip, String country, Date date) {
+    public Location(Long id, String city, String county, String state, String zip, String country, Date date) {
         this.id = id;
         this.city = city;
         this.county = county;
@@ -41,11 +41,11 @@ public class Location implements Comparable<Location> {
         this.createdTs = date;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -132,22 +132,21 @@ public class Location implements Comparable<Location> {
         if (this == o) {
             return 0;
         }
-        if(this.getZip() != null) {
+        if (this.getZip() != null) {
             int compare = this.getZip().compareTo(o.getZip());
             if (compare != 0) {
                 return compare;
             }
         }
-        if(this.getCity() != null) {
+        if (this.getCity() != null) {
             int compare = this.getCity().compareTo(o.getCity());
             if (compare != 0) {
                 return compare;
             }
         }
-        if(this.getState() != null) {
+        if (this.getState() != null) {
             return this.getState().compareTo(o.getState());
-        }
-        else{
+        } else {
             return -1;
         }
     }

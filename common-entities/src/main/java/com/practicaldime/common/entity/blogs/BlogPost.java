@@ -7,8 +7,10 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BlogPost  {
+public class BlogPost {
 
+    private final List<String> tags = new ArrayList<>();
+    private final List<Comment> comments = new LinkedList<>();
     private Long id;
     private String title;
     private Profile author;
@@ -16,9 +18,7 @@ public class BlogPost  {
     private String content;
     private int pageNum;
     private boolean published;
-    private final List<String> tags = new ArrayList<>();
-    private final List<Comment> comments = new LinkedList<>();
-    private Date dateCreaated = new Date();
+    private Date dateCreated = new Date();
 
     public Long getId() {
         return id;
@@ -28,12 +28,12 @@ public class BlogPost  {
         this.id = id;
     }
 
-    public Date getDateCreaated() {
-        return dateCreaated;
+    public Date getDateCreated() {
+        return dateCreated;
     }
 
-    public void setDateCreaated(Date dateCreaated) {
-        this.dateCreaated = dateCreaated;
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
     public String getTitle() {
@@ -61,22 +61,22 @@ public class BlogPost  {
     }
 
     public String getContent() {
-		return content;
-	}
+        return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public int getPageNum() {
-		return pageNum;
-	}
+    public int getPageNum() {
+        return pageNum;
+    }
 
-	public void setPageNum(int seqNum) {
-		this.pageNum = seqNum;
-	}
+    public void setPageNum(int seqNum) {
+        this.pageNum = seqNum;
+    }
 
-	public boolean isPublished() {
+    public boolean isPublished() {
         return published;
     }
 
@@ -85,8 +85,8 @@ public class BlogPost  {
     }
 
     public List<String> getTags() {
-		return tags;
-	}
+        return tags;
+    }
 
     public List<Comment> getComments() {
         return comments;

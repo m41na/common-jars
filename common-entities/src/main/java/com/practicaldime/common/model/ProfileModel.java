@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class ProfileModel implements RequestModel<Profile> {
 
-    public String id;
+    public Long id;
     public String first;
     public String last;
     public String email;

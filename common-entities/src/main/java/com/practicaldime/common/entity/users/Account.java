@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Account {
 
-    private String id;
+    private Long id;
 
     @NotNull(message = "username is a required field")
     @Size(max = 32, message = "max length of username allowed is 32")
@@ -25,7 +25,7 @@ public class Account {
     private Profile profile;
 
     @NotNull(message = "updated by is a required field")
-    private String updatedBy;
+    private Long updatedBy;
 
     private Date createdTs;
 
@@ -33,7 +33,7 @@ public class Account {
         super();
     }
 
-    public Account(String id, String username, char[] password, AccRole role, AccStatus status, Profile profile, String updatedBy, Date createdTs) {
+    public Account(Long id, String username, char[] password, AccRole role, AccStatus status, Profile profile, Long updatedBy, Date createdTs) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -44,11 +44,11 @@ public class Account {
         this.createdTs = createdTs;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -92,11 +92,11 @@ public class Account {
         this.profile = profile;
     }
 
-    public String getUpdatedBy() {
+    public Long getUpdatedBy() {
         return updatedBy;
     }
 
-    public void setUpdatedBy(String updatedBy) {
+    public void setUpdatedBy(Long updatedBy) {
         this.updatedBy = updatedBy;
     }
 

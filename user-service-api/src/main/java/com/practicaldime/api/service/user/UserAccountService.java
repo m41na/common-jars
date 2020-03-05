@@ -6,15 +6,15 @@ import com.practicaldime.common.util.AResult;
 public interface UserAccountService {
 
     AResult<Registration> register(Registration profile);
-    
+
     AResult<Credentials> login(Credentials cred);
 
     AResult<PassReset> resetPassword(PassReset reset);
 
     AResult<PassUpdate> updatePassword(PassUpdate update);
-    
+
     AResult<ProfileModel> retrieveById(String id);
-    
+
     AResult<ProfileModel> retrieveByEmail(String email);
 
     AResult<ProfileModel> update(ProfileModel profile);

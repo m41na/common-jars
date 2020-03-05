@@ -8,7 +8,7 @@ public class ApiRes<T> implements Serializable {
 
     private static final long serialVersionUID = 5742436875626069669L;
     private Integer statusCode;
-    private String statusDescr;
+    private String description;
     private String protocol;
     private Map<String, String> headers = new HashMap<>();
     private T responseBody;
@@ -21,12 +21,12 @@ public class ApiRes<T> implements Serializable {
         this.statusCode = statusCode;
     }
 
-    public String getStatusDescr() {
-        return statusDescr;
+    public String getDescription() {
+        return description;
     }
 
-    public void setStatusDescr(String statusDescr) {
-        this.statusDescr = statusDescr;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getProtocol() {
@@ -53,11 +53,11 @@ public class ApiRes<T> implements Serializable {
         this.responseBody = responseBody;
     }
 
-	@Override
-	public String toString() {
-		return "ApiRes [statusCode=" + statusCode + ", statusDescr=" + statusDescr + ", protocol=" + protocol
-				+ ", headers=" + headers + ", responseBody=" + responseBody + ", getStatusCode()=" + getStatusCode()
-				+ ", getStatusDescr()=" + getStatusDescr() + ", getProtocol()=" + getProtocol() + ", getHeaders()="
-				+ getHeaders() + ", getResponseBody()=" + getResponseBody() + "]";
-	}
+    @Override
+    public String toString() {
+        return "ApiRes [statusCode=" + statusCode + ", statusDescr=" + description + ", protocol=" + protocol
+                + ", headers=" + headers + ", responseBody=" + responseBody + ", getStatusCode()=" + getStatusCode()
+                + ", getDescription()=" + getDescription() + ", getProtocol()=" + getProtocol() + ", getHeaders()="
+                + getHeaders() + ", getResponseBody()=" + getResponseBody() + "]";
+    }
 }

@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Profile {
 
-    private String id;
+    private Long id;
 
     @Size(max = 32, message = "max length of first name allowed is 32")
     private String firstName;
@@ -29,7 +29,7 @@ public class Profile {
 
     private Location locatedAt;
 
-    private String updatedBy;
+    private Long updatedBy;
 
     private Date createdTs;
 
@@ -37,7 +37,7 @@ public class Profile {
         super();
     }
 
-    public Profile(String id, String firstName, String lastName, String emailAddress, Boolean emailVerified, String phoneNumber, Boolean phoneVerified, Location locatedAt, String updatedBy, Date createdTs) {
+    public Profile(Long id, String firstName, String lastName, String emailAddress, Boolean emailVerified, String phoneNumber, Boolean phoneVerified, Location locatedAt, Long updatedBy, Date createdTs) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -50,11 +50,11 @@ public class Profile {
         this.createdTs = createdTs;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -114,11 +114,11 @@ public class Profile {
         this.locatedAt = locatedAt;
     }
 
-    public String getUpdatedBy() {
+    public Long getUpdatedBy() {
         return updatedBy;
     }
 
-    public void setUpdatedBy(String updatedBy) {
+    public void setUpdatedBy(Long updatedBy) {
         this.updatedBy = updatedBy;
     }
 

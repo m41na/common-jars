@@ -2,20 +2,20 @@ package com.practicaldime.common.entity.users;
 
 public class AuthLogin {
 
-	private Long authId;
+    private Long authId;
     private String authName;
     private String authToken;
     private String authRole;
 
     public Long getAuthId() {
-		return authId;
-	}
+        return authId;
+    }
 
-	public void setAuthId(Long authId) {
-		this.authId = authId;
-	}
+    public void setAuthId(Long authId) {
+        this.authId = authId;
+    }
 
-	public String getAuthName() {
+    public String getAuthName() {
         return authName;
     }
 

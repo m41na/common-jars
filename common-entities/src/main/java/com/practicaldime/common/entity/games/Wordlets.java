@@ -5,8 +5,8 @@ import java.util.Set;
 
 
 public class Wordlets {
-   
-     private Long id;
+
+    private Long id;
     private Long attempts;
     private Integer points;
     private Set<String> combinations = new HashSet<>();

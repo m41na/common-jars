@@ -3,7 +3,7 @@ package com.practicaldime.common.model;
 import java.util.*;
 
 public class ManageData {
-    
+
     public String username;
     public Set<ScrumTeamModel> teams = new HashSet<>();
     public Set<FlashCardModel> cards = new HashSet<>();
@@ -17,10 +17,10 @@ public class ManageData {
         super();
         this.username = username;
         this.teams.addAll(model.keySet());
-        model.values().stream().forEach(e->this.cards.addAll(e));
+        model.values().stream().forEach(e -> this.cards.addAll(e));
         this.picks = picks;
     }
-    
+
     public String getUsername() {
         return username;
     }
@@ -36,7 +36,7 @@ public class ManageData {
     public void setTeams(Set<ScrumTeamModel> teams) {
         this.teams = teams;
     }
-    
+
     public void addTeams(Collection<ScrumTeamModel> teams) {
         this.teams.addAll(teams);
     }

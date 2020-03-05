@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class ScrumTeamModel implements RequestModel<ScrumTeam>, Comparable<ScrumTeamModel>{
+public class ScrumTeamModel implements RequestModel<ScrumTeam>, Comparable<ScrumTeamModel> {
 
-    public String teamId;
+    public Long teamId;
     public String title;
     public String organizer;
     public Boolean guest = Boolean.TRUE;
@@ -21,7 +21,7 @@ public class ScrumTeamModel implements RequestModel<ScrumTeam>, Comparable<Scrum
     public ScrumTeamModel() {
         super();
     }
-    
+
     public ScrumTeamModel(ScrumTeam entity) {
         super();
         this.teamId = entity.getId();
@@ -41,19 +41,19 @@ public class ScrumTeamModel implements RequestModel<ScrumTeam>, Comparable<Scrum
         this.createdTs = new Date();
         this.picks = "1,2,3,5,8,13,21";
     }
-    
+
     @Override
     public ModelFields validate() {
         ModelFields errors = new ModelFields();
-        if(title == null || title.trim().length() == 0){
+        if (title == null || title.trim().length() == 0) {
             errors.put("title", title, "title is a required field");
         }
-        
-        if(organizer == null || organizer.trim().length() == 0){
+
+        if (organizer == null || organizer.trim().length() == 0) {
             errors.put("organizer", organizer, "organizer is a required field");
         }
-        
-        if(picks == null || picks.trim().length() == 0){
+
+        if (picks == null || picks.trim().length() == 0) {
             errors.put("picks", picks, "picks is a required field");
         }
         return errors;
@@ -63,14 +63,14 @@ public class ScrumTeamModel implements RequestModel<ScrumTeam>, Comparable<Scrum
     public ScrumTeam entity() {
         ScrumTeam team = new ScrumTeam();
         team.setCreatedTs(createdTs);
-        List<String> list = Arrays.stream(picks.split("(,|\\s)")).filter(e->(e != null && e.length() > 0)).collect(Collectors.toList());
+        List<String> list = Arrays.stream(picks.split("(,|\\s)")).filter(e -> (e != null && e.length() > 0)).collect(Collectors.toList());
         team.setPicks(list.toArray(new String[list.size()]));
         team.setId(teamId);
         team.setOrganizer(organizer);
         team.setTitle(title);
         team.setLocked(locked);
         return team;
-    }    
+    }
 
     @Override
     public int hashCode() {
@@ -107,8 +107,8 @@ public class ScrumTeamModel implements RequestModel<ScrumTeam>, Comparable<Scrum
             return 0;
         }
         int compare = this.organizer.compareTo(o.organizer);
-        if(compare != 0) {
-        	return compare;
+        if (compare != 0) {
+            return compare;
         }
         return this.title.compareTo(o.title);
     }

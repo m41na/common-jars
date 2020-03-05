@@ -1,15 +1,12 @@
 package com.practicaldime.common.entity.rest;
 
 public class ApiAssert<T extends Comparable<T>> {
-     
-    public static enum AssertType {
-        assertContains, assertEquals, assertNotEmpty, assertElementExists, assertElementTextContains
-    }
+
     private Long id;
     private AssertType assertType;
     private String failMessage;
     private T expectedValue;
-    private String actualValue;   
+    private String actualValue;
     private Boolean execute = true;
     private String result;
 
@@ -41,9 +38,9 @@ public class ApiAssert<T extends Comparable<T>> {
         return expectedValue;
     }
 
-	@SuppressWarnings("unchecked")
-	public void setExpectedValue(Object expectedValue) {
-        this.expectedValue = (T)expectedValue;
+    @SuppressWarnings("unchecked")
+    public void setExpectedValue(Object expectedValue) {
+        this.expectedValue = (T) expectedValue;
     }
 
     public String getActualValue() {
@@ -68,5 +65,9 @@ public class ApiAssert<T extends Comparable<T>> {
 
     public void setResult(String result) {
         this.result = result;
+    }
+
+    public static enum AssertType {
+        assertContains, assertEquals, assertNotEmpty, assertElementExists, assertElementTextContains
     }
 }

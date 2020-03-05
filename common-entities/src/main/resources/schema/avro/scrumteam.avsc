@@ -2,7 +2,7 @@
  "type": "record",
  "name": "ScrumTeamAvro",
  "fields": [
-     {"name": "id", "type": "string"},
+     {"name": "id", "type": "long"},
      {"name": "title", "type": "string"},
      {"name": "organizer",  "type": "string"},
      {"name": "locked", "type": "boolean", "default": false},
@@ -11,7 +11,7 @@
              "type": "record",
              "name": "LocationAvro",
              "fields": [
-                 {"name": "id", "type": ["string", "null"]},
+                 {"name": "id", "type": ["long", "null"]},
                  {"name": "city",  "type": "string"},
                  {"name": "county", "type": ["string", "null"]},
                  {"name": "state", "type": "string"},
@@ -22,7 +22,7 @@
              ]}
           ]
        },
-     {"name": "createdBy", "type": ["string", "null"]},
+     {"name": "createdBy", "type": ["long", "null"]},
      {"name": "dateCreated", "type": "string"},
      {"name": "picks", "type": ["null",
         {"type": "array", "items": "string"}

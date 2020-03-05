@@ -47,7 +47,7 @@ public class UserEndpoints {
         return merged;
     }
 
-	public void setMerged(boolean merged) {
-		this.merged = merged;
-	}
+    public void setMerged(boolean merged) {
+        this.merged = merged;
+    }
 }

@@ -4,9 +4,13 @@ import java.util.HashMap;
 
 public class ModelFields extends HashMap<String, Object> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	static class Field {
+    public void put(String field, Object value, String error) {
+        put(field, new Field(value, error));
+    }
+
+    static class Field {
 
         public Object value;
         public String error;
@@ -15,9 +19,5 @@ public class ModelFields extends HashMap<String, Object> {
             this.value = value;
             this.error = error;
         }
-    }
-    
-    public void put(String field, Object value, String error){
-        put(field, new Field(value, error));
     }
 }

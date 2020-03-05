@@ -1,7 +1,7 @@
 package com.practicaldime.common.entity.games;
 
 public class MineTrap {
-   
+
     private Long id;
     private Long attempts;
     private Integer points;

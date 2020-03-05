@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Comment  {
+public class Comment {
 
+    private final List<Comment> feedback = new ArrayList<>();
     private Long id;
-    private long parentBlog; 
+    private long parentBlog;
     private long parentComment;
     private Profile author;
     private String content;
     private boolean published;
-    private final List<Comment> feedback = new ArrayList<>();
-    private Date dateCreaated = new Date();
+    private Date dateCreated = new Date();
 
     public Long getId() {
         return id;
@@ -25,12 +25,12 @@ public class Comment  {
         this.id = id;
     }
 
-    public Date getDateCreaated() {
-        return dateCreaated;
+    public Date getDateCreated() {
+        return dateCreated;
     }
 
-    public void setDateCreaated(Date dateCreaated) {
-        this.dateCreaated = dateCreaated;
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
     public long getParentBlog() {

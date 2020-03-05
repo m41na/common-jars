@@ -23,19 +23,19 @@ import java.io.InputStream;
 public class UtilsConfig {
 
     @Bean
-    public javax.validation.Validator validator(){
+    public javax.validation.Validator validator() {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         javax.validation.Validator validator = factory.getValidator();
         return validator;
     }
 
     @Bean
-    public EntityValidator entityValidator(@Autowired Validator validator){
+    public EntityValidator entityValidator(@Autowired Validator validator) {
         return new EntityValidator(validator);
     }
 
     @Bean
-    public BasicTextEncryptor basicTextEncryptor(@Value("${app.encryptor.password}") String password){
+    public BasicTextEncryptor basicTextEncryptor(@Value("${app.encryptor.password}") String password) {
         BasicTextEncryptor bte = new BasicTextEncryptor();
         bte.setPassword(password);
         return bte;
@@ -105,7 +105,7 @@ public class UtilsConfig {
     }
 
     @Bean
-    public EmailValidator emailValidator(){
+    public EmailValidator emailValidator() {
         return new EmailValidator();
     }
 }

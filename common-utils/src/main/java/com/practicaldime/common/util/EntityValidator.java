@@ -12,7 +12,7 @@ public class EntityValidator {
         this.validator = validator;
     }
 
-    public <T> Set<ConstraintViolation<T>> accept(T entity){
+    public <T> Set<ConstraintViolation<T>> accept(T entity) {
         return validator.validate(entity);
     }
 }

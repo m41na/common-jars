@@ -21,7 +21,7 @@ public class PasswordUtil {
         String encryptedPassword = PASS_ENCR.encryptPassword(pwd);
         return encryptedPassword;
     }
-    
+
     public static char[] hashPassword(char[] pwd) {
         String hashed = PASS_ENCR.encryptPassword(new String(pwd));
         return hashed.toCharArray();
@@ -48,9 +48,9 @@ public class PasswordUtil {
     public static String decryptText(String text) {
         return TEXT_ENCR.decrypt(text);
     }
-    
-    public static void main(String...args){
-        String word = args.length > 0? args[0] : "0Hh4pPyDaY";
+
+    public static void main(String... args) {
+        String word = args.length > 0 ? args[0] : "0Hh4pPyDaY";
         System.out.printf("hashed for '%s' is '%s'%n", word, PasswordUtil.hashPassword(word));
         System.out.printf("encypted for '%s' is '%s'%n", word, PasswordUtil.encryptText(word));
         System.out.println("Verify is " + verifyPassword("admin", "rK2EQkfNaQTf6yDKeDQ3ZXhCZWRSaAOmOjkOcHzWvvRt89GHADaFMeptBHXnVbBa"));

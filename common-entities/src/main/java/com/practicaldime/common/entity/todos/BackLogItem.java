@@ -3,12 +3,21 @@ package com.practicaldime.common.entity.todos;
 
 import java.util.Date;
 
-public class BackLogItem  {
+public class BackLogItem {
 
     private Long id;
     private String task;
     private boolean done;
     private Date dateCreaated = new Date();
+
+    public BackLogItem() {
+        super();
+    }
+
+    public BackLogItem(String item) {
+        super();
+        this.task = item;
+    }
 
     public Long getId() {
         return id;
@@ -24,15 +33,6 @@ public class BackLogItem  {
 
     public void setDateCreaated(Date dateCreaated) {
         this.dateCreaated = dateCreaated;
-    }
-
-    public BackLogItem() {
-        super();
-    }
-
-    public BackLogItem(String item) {
-        super();
-        this.task = item;
     }
 
     public String getTask() {

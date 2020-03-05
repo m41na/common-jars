@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-public class Validations {    
-    
+public class Validations {
+
     public static String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
-    public static Map<String, String> states = new HashMap<String, String>(){
+    public static Map<String, String> states = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-		{
+        {
             put("AL", "Alabama");
             put("AK", "Alaska");
             put("AZ", "Arizona");
@@ -74,7 +74,7 @@ public class Validations {
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(email).matches();
     }
-    
+
     public static boolean validUSState(String state) {
         return !states.keySet().contains(state);
     }

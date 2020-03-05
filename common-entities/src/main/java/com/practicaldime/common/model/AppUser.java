@@ -3,11 +3,11 @@ package com.practicaldime.common.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class AppUser implements Serializable, Comparable<AppUser>{
+public class AppUser implements Serializable, Comparable<AppUser> {
 
-	private static final long serialVersionUID = 1L;
-	
-	public char[] username;
+    private static final long serialVersionUID = 1L;
+
+    public char[] username;
     public String userId;
     public String userRole;
     public char[] userToken;

@@ -16,12 +16,7 @@ public class AResult<T> {
         this.errors = Collections.emptyMap();
     }
 
-    public String errorString(){
-        return (this.errors == null || this.errors.size()== 0) ? "" :
-                this.errors.keySet().stream().reduce("errors: ", (acc, key) -> acc + this.errors.get(key) + "\n");
-    }
-
-    public AResult( Integer code, T data) {
+    public AResult(Integer code, T data) {
         this.code = code;
         this.data = data;
         this.errors = Collections.emptyMap();
@@ -33,9 +28,16 @@ public class AResult<T> {
         this.errors = errors;
     }
 
-    public AResult( String error, Integer code) {
+    public AResult(String error, Integer code) {
         this.code = code;
         this.data = null;
-        this.errors = new HashMap<String, String>(){{put("error", error);}};
+        this.errors = new HashMap<String, String>() {{
+            put("error", error);
+        }};
+    }
+
+    public String errorString() {
+        return (this.errors == null || this.errors.size() == 0) ? "" :
+                this.errors.keySet().stream().reduce("errors: ", (acc, key) -> acc + this.errors.get(key) + "\n");
     }
 }

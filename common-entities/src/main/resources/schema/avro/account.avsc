@@ -2,7 +2,7 @@
  "type": "record",
  "name": "AccountAvro",
  "fields": [
-     {"name": "id", "type": ["null", "string"]},
+     {"name": "id", "type": ["null", "long"]},
      {"name": "username", "type": "string"},
      {"name": "password",  "type": "string"},
      {"name": "role", "type": ["null", {"type": "enum", "name": "AccRoleAvro", "symbols": ["admin", "super_user", "user", "guest"]}]
@@ -15,7 +15,7 @@
             "type": "record",
              "name": "ProfileAvro",
              "fields": [
-                 {"name": "id", "type": ["string", "null"]},
+                 {"name": "id", "type": ["long", "null"]},
                  {"name": "firstName", "type": ["string", "null"]},
                  {"name": "lastName",  "type": ["string", "null"]},
                  {"name": "emailAddress", "type": "string"},
@@ -27,23 +27,23 @@
                         "type": "record",
                         "name": "LocationAvro",
                         "fields": [
-                            {"name": "id", "type": ["string", "null"]},
+                            {"name": "id", "type": ["long", "null"]},
                             {"name": "city",  "type": "string"},
                             {"name": "county", "type": ["string", "null"]},
                             {"name": "state", "type": "string"},
                             {"name": "zip", "type": ["string", "null"]},
                             {"name": "country", "type": ["string", "null"]},
-                            {"name": "updatedBy", "type": ["string", "null"]},
+                            {"name": "updatedBy", "type": ["long", "null"]},
                             {"name": "createdTs", "type": ["string", "null"]}
                         ]}
                      ]
                   },
-                  {"name": "updatedBy", "type": ["string", "null"]},
+                  {"name": "updatedBy", "type": ["long", "null"]},
                   {"name": "createdTs", "type": ["string", "null"]}
              ]}
           ]
         },
-        {"name": "updatedBy", "type": ["string", "null"]},
+        {"name": "updatedBy", "type": ["long", "null"]},
         {"name": "createdTs", "type": ["string", "null"]}
      ]
 }

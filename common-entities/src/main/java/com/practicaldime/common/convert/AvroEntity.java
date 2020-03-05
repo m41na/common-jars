@@ -18,23 +18,22 @@ public class AvroEntity {
     public static final Logger LOG = LoggerFactory.getLogger(AvroEntity.class);
     public static final DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    public static CharSequence dateToStr(Date date){
+    public static CharSequence dateToStr(Date date) {
         return sdf.format(date);
     }
 
-    public static Date strToDate(String date){
-        try{
-            if(date != null && date.trim().length() > 0){
+    public static Date strToDate(String date) {
+        try {
+            if (date != null && date.trim().length() > 0) {
                 return sdf.parse(date);
             }
-        }
-        catch(ParseException | NullPointerException e){
+        } catch (ParseException | NullPointerException e) {
             LOG.error("could not parse date string into valid date, {}", date);
         }
         return null;
     }
 
-    public static LocationAvro convert(Location address){
+    public static LocationAvro convert(Location address) {
         return LocationAvro.newBuilder()
                 .setCity(address.getCity())
                 .setCountry(address.getCountry())
@@ -45,19 +44,19 @@ public class AvroEntity {
                 .setId(address.getId()).build();
     }
 
-    public static Location convert(LocationAvro address){
+    public static Location convert(LocationAvro address) {
         return new Location(
-              address.getId().toString(),
-              address.getCity().toString(),
-              address.getCounty().toString(),
-              address.getState().toString(),
-              address.getZip().toString(),
-              address.getCountry().toString(),
-              strToDate(address.getCreatedTs().toString())
+                address.getId(),
+                address.getCity().toString(),
+                address.getCounty().toString(),
+                address.getState().toString(),
+                address.getZip().toString(),
+                address.getCountry().toString(),
+                strToDate(address.getCreatedTs().toString())
         );
     }
 
-    public static ProfileAvro convert(Profile profile){
+    public static ProfileAvro convert(Profile profile) {
         return ProfileAvro.newBuilder()
                 .setId(profile.getId())
                 .setFirstName(profile.getFirstName())
@@ -71,9 +70,9 @@ public class AvroEntity {
                 .setCreatedTs(dateToStr(profile.getCreatedTs())).build();
     }
 
-    public static Profile convert(ProfileAvro profile){
+    public static Profile convert(ProfileAvro profile) {
         return new Profile(
-                profile.getId().toString(),
+                profile.getId(),
                 profile.getFirstName().toString(),
                 profile.getLastName().toString(),
                 profile.getEmailAddress().toString(),
@@ -81,12 +80,12 @@ public class AvroEntity {
                 profile.getPhoneNumber().toString(),
                 profile.getPhoneVerified(),
                 convert(profile.getAddress()),
-                profile.getUpdatedBy().toString(),
+                profile.getUpdatedBy(),
                 strToDate(profile.getCreatedTs().toString())
         );
     }
 
-    public static AccountAvro convert(Account account){
+    public static AccountAvro convert(Account account) {
         return AccountAvro.newBuilder()
                 .setCreatedTs(dateToStr(account.getCreatedTs()))
                 .setId(account.getId())
@@ -98,20 +97,20 @@ public class AvroEntity {
                 .setProfile(convert(account.getProfile())).build();
     }
 
-    public static Account convert(AccountAvro account){
+    public static Account convert(AccountAvro account) {
         return new Account(
-                account.getId().toString(),
+                account.getId(),
                 account.getUsername().toString(),
                 account.getPassword().toString().toCharArray(),
                 AccRole.valueOf(account.getRole().toString()),
                 AccStatus.valueOf(account.getStatus().toString()),
                 convert(account.getProfile()),
-                account.getUpdatedBy().toString(),
+                account.getUpdatedBy(),
                 strToDate(account.getCreatedTs().toString())
         );
     }
 
-    public static FlashCardAvro convert(FlashCard card){
+    public static FlashCardAvro convert(FlashCard card) {
         return FlashCardAvro.newBuilder()
                 .setRefId(card.getRefId())
                 .setTeamId(card.getTeamId())
@@ -123,11 +122,11 @@ public class AvroEntity {
                 .setSubmitTime(dateToStr(card.getSubmitTime())).build();
     }
 
-    public static FlashCard convert(FlashCardAvro card){
+    public static FlashCard convert(FlashCardAvro card) {
         return new FlashCard(
-                card.getRefId().toString(),
-                card.getTeamId().toString(),
-                card.getProfileId().toString(),
+                card.getRefId(),
+                card.getTeamId(),
+                card.getProfileId(),
                 card.getTeam().toString(),
                 card.getPlayer().toString(),
                 card.getTopic().toString(),
@@ -136,7 +135,7 @@ public class AvroEntity {
         );
     }
 
-    public static ScrumTeamAvro convert(ScrumTeam team){
+    public static ScrumTeamAvro convert(ScrumTeam team) {
         return ScrumTeamAvro.newBuilder()
                 .setId(team.getId())
                 .setTitle(team.getTitle())
@@ -148,14 +147,14 @@ public class AvroEntity {
                 .setAddress(convert(team.getLocatedAt())).build();
     }
 
-    public static ScrumTeam convert(ScrumTeamAvro team){
+    public static ScrumTeam convert(ScrumTeamAvro team) {
         return new ScrumTeam(
-                team.getId().toString(),
+                team.getId(),
                 team.getTitle().toString(),
                 team.getOrganizer().toString(),
                 team.getLocked(),
                 convert(team.getAddress()),
-                team.getCreatedBy().toString(),
+                team.getCreatedBy(),
                 strToDate(team.getDateCreated().toString()),
                 team.getPicks().toArray(new String[team.getPicks().size()])
         );

@@ -2,9 +2,9 @@
  "type": "record",
  "name": "FlashCardAvro",
  "fields": [
-     {"name": "refId", "type": "string"},
-     {"name": "teamId", "type": "string"},
-     {"name": "profileId", "type": "string"},
+     {"name": "refId", "type": "long"},
+     {"name": "teamId", "type": "long"},
+     {"name": "profileId", "type": "long"},
      {"name": "team", "type": "string"},
      {"name": "player",  "type": "string"},
      {"name": "topic", "type": "string"},

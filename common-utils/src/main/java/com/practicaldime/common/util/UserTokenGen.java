@@ -1,9 +1,9 @@
 package com.practicaldime.common.util;
 
+import org.jasypt.util.text.BasicTextEncryptor;
+
 import java.util.Calendar;
 import java.util.Date;
-
-import org.jasypt.util.text.BasicTextEncryptor;
 
 public class UserTokenGen {
 
@@ -14,6 +14,10 @@ public class UserTokenGen {
     private UserTokenGen() {
         super();
         textEncryptor.setPassword(UserTokenGen.class.getName());
+    }
+
+    public static UserTokenGen getInstance() {
+        return INSTANCE;
     }
 
     public String encrypt(String value) {
@@ -39,9 +43,5 @@ public class UserTokenGen {
         tokenExpiry.setTime(new Date(time));
         tokenExpiry.add(Calendar.MINUTE, VALID_LENGTH_IN_MIN);
         return tokenExpiry.after(now);
-    }
-
-    public static UserTokenGen getInstance() {
-        return INSTANCE;
     }
 }

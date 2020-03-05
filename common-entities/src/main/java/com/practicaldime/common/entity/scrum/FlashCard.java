@@ -4,15 +4,15 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Objects;
 
-public class FlashCard implements Comparable<FlashCard>{
+public class FlashCard implements Comparable<FlashCard> {
 
-    private String refId;
+    private Long refId;
 
     @NotNull(message = "reference team id is a required field")
-    private String teamId;
+    private Long teamId;
 
     @NotNull(message = "reference profile id is a required field")
-    private String profileId;
+    private Long profileId;
 
     @NotNull(message = "team title should use referenced team's title if none is supplied")
     private String team;
@@ -32,7 +32,7 @@ public class FlashCard implements Comparable<FlashCard>{
         super();
     }
 
-    public FlashCard(String refId, String teamId, String profileId, String team, String player, String topic, String pick, Date submitTime) {
+    public FlashCard(Long refId, Long teamId, Long profileId, String team, String player, String topic, String pick, Date submitTime) {
         this.refId = refId;
         this.teamId = teamId;
         this.profileId = profileId;
@@ -43,27 +43,27 @@ public class FlashCard implements Comparable<FlashCard>{
         this.submitTime = submitTime;
     }
 
-    public String getRefId() {
+    public Long getRefId() {
         return refId;
     }
 
-    public void setRefId(String refId) {
+    public void setRefId(Long refId) {
         this.refId = refId;
     }
 
-    public String getTeamId() {
+    public Long getTeamId() {
         return teamId;
     }
 
-    public void setTeamId(String teamId) {
+    public void setTeamId(Long teamId) {
         this.teamId = teamId;
     }
 
-    public String getProfileId() {
+    public Long getProfileId() {
         return profileId;
     }
 
-    public void setProfileId(String profileId) {
+    public void setProfileId(Long profileId) {
         this.profileId = profileId;
     }
 
@@ -146,15 +146,15 @@ public class FlashCard implements Comparable<FlashCard>{
             return 0;
         }
         int compare = this.getTeamId().compareTo(o.getTeamId());
-        if(compare != 0) {
-        	return compare;
+        if (compare != 0) {
+            return compare;
         }
         compare = this.getProfileId().compareTo(o.getProfileId());
-        if(compare != 0) {
+        if (compare != 0) {
             return compare;
         }
         compare = this.getPlayer().compareTo(o.getPlayer());
-        if(compare != 0) {
+        if (compare != 0) {
             return compare;
         }
         return this.getTeam().compareTo(o.getTeam());
